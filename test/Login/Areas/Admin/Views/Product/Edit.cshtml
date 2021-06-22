@@ -1,0 +1,62 @@
+﻿@model Login.Models.EF.product
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+<div class="card">
+    <div class="card-body">
+        <!-- Credit Card -->
+        <div id="pay-invoice">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3 class="text-center">Sửa sản phẩm</h3>
+                </div>
+                @using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { @style = "with:50% ;margin:auto;" }))
+                {
+                    @Html.HiddenFor(model => model.id);
+                    @*<div class="form-group text-center">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-cc-mastercard fa-2x"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-cc-amex fa-2x"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-cc-discover fa-2x"></i></li>
+                            </ul>
+                        </div>*@
+                    <div class="form-group">
+                            <label for="cc-payment" class="control-label mb-1">Mã sản phẩm</label>
+                            <input id="cc-payment" name="id" type="text" class="form-control" aria-required="true" aria-invalid="false" value="@Model.id" disabled>
+                        </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Tên sản phẩm</label>
+                        <input id="cc-payment" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" value="@Model.name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">URL ảnh</label>
+                        <input id="cc-payment" name="image" type="text" class="form-control" aria-required="true" aria-invalid="false" value="@Model.image" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Giá</label>
+                        <input id="cc-payment" name="price" type="text" class="form-control" aria-required="true" aria-invalid="false" value="@Model.price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Tiều đề</label>
+                        <input id="cc-payment" name="title" type="text" class="form-control" aria-required="true" aria-invalid="false" value="@Model.title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Giới thiệu</label>
+                        <input id="cc-payment" name="description" type="text" class="form-control" aria-required="true" aria-invalid="false" value="@Model.description" required>
+                    </div>
+                    <div>
+                        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                            <span id="payment-button-amount">Lưu</span>
+                            <span id="payment-button-sending" style="display:none;">Sending…</span>
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

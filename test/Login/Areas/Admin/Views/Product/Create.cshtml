@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <!-- Credit Card -->
+        <div id="pay-invoice">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3 class="text-center">Thêm sản phẩm</h3>
+                </div>
+                @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { @style = "with:50% ;margin:auto;" }))
+                {
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Tên sản phẩm</label>
+                        <input id="cc-payment" name="name" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">URL ảnh</label>
+                        <input id="cc-payment" name="image" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Giá</label>
+                        <input id="cc-payment" name="price" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Tiều đề</label>
+                        <input id="cc-payment" name="title" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cc-payment" class="control-label mb-1">Giới thiệu</label>
+                        <input id="cc-payment" name="description" type="text" class="form-control" aria-required="true" aria-invalid="false" value="" required>
+                    </div>
+                    <div>
+                        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                            <span id="payment-button-amount">Thêm</span>
+                            <span id="payment-button-sending" style="display:none;">Sending…</span>
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+

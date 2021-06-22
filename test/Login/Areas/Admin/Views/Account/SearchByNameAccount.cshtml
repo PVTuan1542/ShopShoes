@@ -1,0 +1,60 @@
+﻿@model List<Login.Models.EF.Account>
+@{
+    ViewBag.Title = "SearchByNameAccount";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+    <div class="wwrapper">
+        <div class="row" style="margin-bottom: 10px; margin-left: 0px">
+            <input id="txtInput" />
+            <button id="btnSearch" class="btn btn-primary">Tìm kiếm tài khoản</button>
+        </div>
+
+        <div class="ttable">
+
+            <div class="roww hheader bblue">
+                <div class="cell">
+                    ID
+                </div>
+                <div class="cell">
+                    Name
+                </div>
+                <div class="cell">
+                    Pass
+                </div>
+                <div class="cell">
+                    Delete
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="roww">
+                    <div class="cell" data-title="Id">
+                        @item.uID
+                    </div>
+                    <div class="cell" data-title="user">
+                        @item.user
+                    </div>
+                    <div class="cell" data-title="pass">
+                        @item.pass
+                    </div>
+                    <div class="cell" data-title="Delete">
+                        <div class="button">
+                            @*<a class="button" href="@Url.Action("Delete","Product")">Delete</a>*@
+                            @Html.ActionLink("Delete", "Delete", "Account", new { id = @item.uID }, null)
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+
+    <script>
+        $('#btnSearch').on('click', function () {
+            var giatrinhap = $('#txtInput').val();
+            window.location.href = "./SearchByNameAccount?name=" + giatrinhap;
+            //alert(giatrinhap);
+        });
+    </script>
+

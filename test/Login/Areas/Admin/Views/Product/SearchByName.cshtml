@@ -1,0 +1,104 @@
+﻿@model List<Login.Models.EF.product>
+@{
+    ViewBag.Title = "SearchByName";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+@if (Model.Count > 0)
+{
+    <div class="wwrapper">
+        <div class="row" style="margin-bottom: 10px; margin-left: 0px">
+            <input id="txtInput" />
+            <button id="btnSearch" class="btn btn-primary">Tìm kiếm sản phẩm</button>
+        </div>
+
+        <div class="ttable">
+
+            <div class="roww hheader bblue">
+                <div class="cell">
+                    ID
+                </div>
+                <div class="cell">
+                    Name
+                </div>
+                <div class="cell">
+                    Prince
+                </div>
+                <div class="cell">
+                    Tilte
+                </div>
+                <div class="cell">
+                    Description
+                </div>
+                <div class="cell">
+                    Image
+                </div>
+                <div class="cell">
+                    Edit
+                </div>
+                <div class="cell">
+                    Delete
+                </div>
+                <div class="cell">
+                    Add
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+        <div class="roww">
+            <div class="cell" data-title="Id">
+                @item.id
+            </div>
+            <div class="cell" data-title="Name">
+                @item.name
+            </div>
+            <div class="cell" data-title="Prince">
+                @item.price
+            </div>
+            <div class="cell" data-title="Title">
+                @item.title
+            </div>
+            <div class="cell" data-title="Description">
+                <div class="ex1">@item.description</div>
+            </div>
+            <div class="cell" data-title="image">
+                <div class="ex2"><img src="@item.image" alt="" width="80" height="80"></div>
+            </div>
+            <div class="cell" data-title="Edit">
+                <div class="button">
+                    @Html.ActionLink("Edit", "Edit", "Product", new { id = @item.id }, null)
+                </div>
+            </div>
+            <div class="cell" data-title="Delete">
+                <div class="button">
+                    @*<a class="button" href="@Url.Action("Delete","Product")">Delete</a>*@
+                    @Html.ActionLink("Delete", "Delete", "Product", new { id = @item.id }, null)
+                </div>
+            </div>
+            <div class="cell" data-title="Add">
+                <div class="button">
+                    <a class="button" href="@Url.Action("Create","Product")">Add</a>
+                </div>
+            </div>
+
+        </div>
+            }
+
+
+
+        </div>
+    </div>
+
+
+<script>
+        $('#btnSearch').on('click', function () {
+            var giatrinhap = $('#txtInput').val();
+            window.location.href = "./SearchByName?name=" + giatrinhap;
+            //alert(giatrinhap);
+        });
+    </script>
+}
+else 
+{
+    <h2>Không có sẩn hẩm phù hợp với từ khóa @ViewBag.key</h2>
+}
+

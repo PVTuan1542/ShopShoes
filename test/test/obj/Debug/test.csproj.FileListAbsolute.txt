@@ -1,0 +1,6 @@
+D:\HocTap\Learn\Learn_2021\C#\ThucHanh\test\test\bin\Debug\test.dll
+D:\HocTap\Learn\Learn_2021\C#\ThucHanh\test\test\bin\Debug\test.pdb
+D:\HocTap\Learn\Learn_2021\C#\ThucHanh\test\test\obj\Debug\test.csprojAssemblyReference.cache
+D:\HocTap\Learn\Learn_2021\C#\ThucHanh\test\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+D:\HocTap\Learn\Learn_2021\C#\ThucHanh\test\test\obj\Debug\test.dll
+D:\HocTap\Learn\Learn_2021\C#\ThucHanh\test\test\obj\Debug\test.pdb
